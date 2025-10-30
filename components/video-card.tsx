@@ -24,11 +24,12 @@ export default function VideoCard({ video, onSelect }: VideoCardProps) {
       onMouseLeave={() => setIsHovered(false)}
       onClick={onSelect}
     >
-      {/* <CHANGE> Using video element with preload to show first frame */}
+      {/* ✅ FIXED: Added playsInline for iPhone compatibility */}
       <video
         src={video.src}
         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         preload="metadata"
+        playsInline
         muted
         crossOrigin="anonymous"
       />
