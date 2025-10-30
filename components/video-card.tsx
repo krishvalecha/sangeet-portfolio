@@ -7,6 +7,7 @@ interface Video {
   title: string
   description: string
   src: string
+  thumbnail: string  // ← ADDED
 }
 
 interface VideoCardProps {
@@ -24,9 +25,10 @@ export default function VideoCard({ video, onSelect }: VideoCardProps) {
       onMouseLeave={() => setIsHovered(false)}
       onClick={onSelect}
     >
-      {/* ✅ FIXED: Added playsInline for iPhone compatibility */}
+      {/* ✅ FIXED: Added poster attribute for instant thumbnail */}
       <video
         src={video.src}
+        poster={video.thumbnail}  // ← ADDED - Shows thumbnail instantly!
         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         preload="metadata"
         playsInline

@@ -8,20 +8,69 @@ interface Video {
   title: string
   description: string
   src: string
+  thumbnail: string  // ← ADDED
 }
 
 const performanceVideos: Video[] = [
-  { id: "1", title: "Performance 1", description: "", src: "/videos/Grooms friends.mp4" },
-  { id: "2", title: "Performance 2", description: "", src: "/videos/Copy of AALSI family 1.mp4" },
-  { id: "3", title: "Performance 3", description: "", src: "/videos/Copy of AL & cousins.mp4" },
-  { id: "4", title: "Performance 4", description: "", src: "/videos/groom solo.mp4" },
+  { 
+    id: "1", 
+    title: "Performance 1", 
+    description: "", 
+    src: "/videos/Grooms friends.mp4",
+    thumbnail: "/thumbnails/thumbnail1.png"  // ← ADDED
+  },
+  { 
+    id: "2", 
+    title: "Performance 2", 
+    description: "", 
+    src: "/videos/Copy of AALSI family 1.mp4",
+    thumbnail: "/thumbnails/thumbnail2.png"  // ← ADDED
+  },
+  { 
+    id: "3", 
+    title: "Performance 3", 
+    description: "", 
+    src: "/videos/Copy of AL & cousins.mp4",
+    thumbnail: "/thumbnails/thumbnail3.png"  // ← ADDED
+  },
+  { 
+    id: "4", 
+    title: "Performance 4", 
+    description: "", 
+    src: "/videos/groom solo.mp4",
+    thumbnail: "/thumbnails/thumbnail4.png"  // ← ADDED
+  },
 ]
 
 const rehearsalVideos: Video[] = [
-  { id: "5", title: "Rehearsal 1", description: "", src: "/videos/practice.mp4" },
-  { id: "6", title: "Rehearsal 2", description: "", src: "/videos/practice_3.mp4" },
-  { id: "7", title: "Rehearsal 3", description: "", src: "/videos/practice_2.mp4" },
-  { id: "8", title: "Rehearsal 4", description: "", src: "/videos/practice_4.mp4" },
+  { 
+    id: "5", 
+    title: "Rehearsal 1", 
+    description: "", 
+    src: "/videos/practice.mp4",
+    thumbnail: "/thumbnails/thumbnail5.png"  // ← ADDED
+  },
+  { 
+    id: "6", 
+    title: "Rehearsal 2", 
+    description: "", 
+    src: "/videos/practice_3.mp4",
+    thumbnail: "/thumbnails/thumbnail6.png"  // ← ADDED
+  },
+  { 
+    id: "7", 
+    title: "Rehearsal 3", 
+    description: "", 
+    src: "/videos/practice_2.mp4",
+    thumbnail: "/thumbnails/thumbnail7.png"  // ← ADDED
+  },
+  { 
+    id: "8", 
+    title: "Rehearsal 4", 
+    description: "", 
+    src: "/videos/practice_4.mp4",
+    thumbnail: "/thumbnails/thumbnail8.png"  // ← ADDED
+  },
 ]
 
 interface VideoGalleryProps {
@@ -35,7 +84,6 @@ export default function VideoGallery({ onVideoSelect }: VideoGalleryProps) {
     setIsVisible(true)
   }, [])
 
-  // ✨ Helper to render each section with its own CTA
   const renderSection = (
     title: string,
     videos: Video[],
@@ -43,7 +91,6 @@ export default function VideoGallery({ onVideoSelect }: VideoGalleryProps) {
     ctaText: string
   ) => (
     <div className="mb-24">
-      {/* Section Heading */}
       <div
         className={`text-center mb-12 transform transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -53,7 +100,6 @@ export default function VideoGallery({ onVideoSelect }: VideoGalleryProps) {
         <div className="w-20 h-1 bg-gold mx-auto rounded-full" />
       </div>
 
-      {/* Videos Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-5xl mx-auto">
         {videos.map((video, index) => (
           <div
@@ -68,7 +114,6 @@ export default function VideoGallery({ onVideoSelect }: VideoGalleryProps) {
         ))}
       </div>
 
-      {/* ✅ Section-specific CTA */}
       <div className="mt-16 text-center">
         <h3 className="font-serif text-2xl sm:text-3xl font-bold text-burgundy mb-4">
           Check Out All The {title} Videos
