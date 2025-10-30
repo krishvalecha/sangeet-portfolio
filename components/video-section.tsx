@@ -9,7 +9,6 @@ export default function VideoSection() {
     const video = videoRef.current
     if (!video) return
 
-    // 🎯 Create Intersection Observer for scroll-triggered playback
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -18,27 +17,35 @@ export default function VideoSection() {
           video.pause()
         }
       },
-      { threshold: 0.4 } // play when 40% of section is visible
+      { threshold: 0.4 }
     )
 
     observer.observe(video)
-
     return () => observer.disconnect()
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
       {/* 🎥 Background Video */}
       <video
         ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover"
+        className="
+          absolute inset-0 w-full h-full 
+          object-cover 
+          sm:object-cover 
+          md:object-cover 
+          lg:object-cover 
+          xl:object-cover 
+          [@media(max-width:640px)]:object-contain 
+          [@media(max-width:640px)]:bg-black
+        "
         src="/videos/WhatsApp Video 2025-10-31 at 00.56.05_30029547.mp4"
         loop
         muted
         playsInline
       />
 
-      {/* Optional: overlay for a dimmed look */}
+      {/* 🖤 Optional overlay for dim effect */}
       <div className="absolute inset-0 bg-black/30" />
     </section>
   )
