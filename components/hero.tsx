@@ -32,8 +32,9 @@ export default function Hero() {
         ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover sm:object-cover md:object-cover lg:object-cover xl:object-cover 
                    [@media(max-width:640px)]:object-contain [@media(max-width:640px)]:bg-black"
-        src="/videos/with_audio.mp4"
+        src="/videos/WhatsApp Video 2025-10-31 at 00.16.05_c5a30a18.mp4"
         loop
+        muted
         playsInline
       />
 
