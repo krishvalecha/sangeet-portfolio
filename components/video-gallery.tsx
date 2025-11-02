@@ -47,7 +47,7 @@ const rehearsalVideos: Video[] = [
     id: "5", 
     title: "Rehearsal 1", 
     description: "", 
-    src: "/videos/practice.mp4",
+    src: "/videos/rehersall.mp4",
     thumbnail: "/thumbnails/thumbnail5.png"  // ← ADDED
   },
   { 
