@@ -30,8 +30,8 @@ const performanceVideos: Video[] = [
     id: "3", 
     title: "Performance 3", 
     description: "", 
-    src: "/videos/Copy of AL & cousins.mp4",
-    thumbnail: "/thumbnails/thumbnail3.png"  // ← ADDED
+    src: "/videos/10. Finale family.mp4.mp4",
+    thumbnail: "/thumbnails/thumbnew.png"  // ← ADDED
   },
   { 
     id: "4", 
