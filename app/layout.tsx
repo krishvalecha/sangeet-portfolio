@@ -8,7 +8,7 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Choreographed Memories - Wedding Sangeet Dance Portfolio",
+  title: "Dil Bole Jazz- Sangeet choreography & Management",
   description: "Premium choreography for weddings, sangeets, and special celebrations",
   generator: "v0.app",
 }
